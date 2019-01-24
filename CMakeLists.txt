@@ -254,7 +254,7 @@ endif()
 #-------------------------------------------------------------------
 #-- BUILD SELECTION OPTIONS
 # Options for selecting the core core libraries
-option( VXL_BUILD_CORE_NUMERICS_ONLY "Turn off everything except the core numerics" OFF)
+option( VXL_BUILD_CORE_NUMERICS_ONLY "Turn off everything except the core numerics" ON)
 mark_as_advanced(VXL_BUILD_CORE_NUMERICS_ONLY)
 option( VXL_BUILD_CORE_NUMERICS "Build VXL's numerics libraries" ON )
 CMAKE_DEPENDENT_OPTION( VXL_BUILD_CORE_GEOMETRY "Build VXL's geometry libraries" ON "NOT VXL_BUILD_CORE_NUMERICS_ONLY" OFF)
