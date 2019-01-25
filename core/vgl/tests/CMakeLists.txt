@@ -24,8 +24,8 @@ add_executable( vgl_test_all
   test_plane_3d.cxx
   test_frustum_3d.cxx
   test_intersection.cxx
-  test_spline.cxx
-  test_pointset.cxx
+  #test_spline.cxx
+  #test_pointset.cxx
   test_quadric.cxx
   test_oriented_box_2d.cxx
   test_affine_coordinates.cxx
