@@ -8,6 +8,7 @@
 #ifdef _MSC_VER
 #  include <vcl_msvc_warnings.h>
 #endif
+#include <iostream>
 
 // Note that the given planes must be distinct and not have a line in common!
 template <class Type>

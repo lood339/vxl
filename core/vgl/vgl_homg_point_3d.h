@@ -23,6 +23,7 @@
 #  include <vcl_msvc_warnings.h>
 #endif
 #include <cassert>
+#include <iostream>
 
 //: Represents a homogeneous 3D point
 template <class Type>

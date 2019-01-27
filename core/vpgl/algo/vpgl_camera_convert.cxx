@@ -1325,7 +1325,7 @@ convert( vpgl_affine_camera<double> const& aff_cam, int ni, int nj,
   return true;
 }
 
-
+/*
 bool vpgl_generic_camera_convert::
 convert( vpgl_camera_double_sptr const& camera, int ni, int nj,
          vpgl_generic_camera<double> & gen_cam, unsigned level)
@@ -1350,6 +1350,7 @@ convert( vpgl_camera_double_sptr const& camera, int ni, int nj,
 
   return false;
 }
+ */
 
 
 #if HAS_GEOTIFF

@@ -25,15 +25,15 @@
 #ifdef _MSC_VER
 #  include <vcl_msvc_warnings.h>
 #endif
-#include <vbl/vbl_ref_count.h>
+//#include <vbl/vbl_ref_count.h>
 
 template <class T>
-class vpgl_camera : public vbl_ref_count
+class vpgl_camera //: public vbl_ref_count
 {
  public:
 
   vpgl_camera() = default;
-  ~vpgl_camera() override = default;
+  ~vpgl_camera() = default;
 
   //: class identity functions for casting
   virtual std::string type_name() const { return "vpgl_camera"; }
@@ -45,7 +45,7 @@ class vpgl_camera : public vbl_ref_count
 };
 
 // convenience typedefs for smart pointers to abstract cameras
-#include "vpgl_camera_double_sptr.h"
-#include "vpgl_camera_float_sptr.h"
+//#include "vpgl_camera_double_sptr.h"
+//#include "vpgl_camera_float_sptr.h"
 
 #endif // vpgl_camera_h_

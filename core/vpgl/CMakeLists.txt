@@ -2,7 +2,7 @@
 # Photogrammetry Library.
 
 doxygen_add_library(core/vpgl
-  DEPENDS core/vcsl core/vgl core/vnl core/vbl
+  DEPENDS core/vcsl core/vgl core/vnl #core/vbl
   PACKAGE core-L2
   DESCRIPTION "Photogrammetry Library"
   )
@@ -37,7 +37,7 @@ aux_source_directory(Templates vpgl_sources)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 vxl_add_library(LIBRARY_NAME ${VXL_LIB_PREFIX}vpgl LIBRARY_SOURCES ${vpgl_sources})
-target_link_libraries(${VXL_LIB_PREFIX}vpgl ${VXL_LIB_PREFIX}vnl_algo ${VXL_LIB_PREFIX}vnl ${VXL_LIB_PREFIX}vgl_algo ${VXL_LIB_PREFIX}vgl ${VXL_LIB_PREFIX}vul ${VXL_LIB_PREFIX}vsl ${VXL_LIB_PREFIX}vbl)
+target_link_libraries(${VXL_LIB_PREFIX}vpgl ${VXL_LIB_PREFIX}vnl_algo ${VXL_LIB_PREFIX}vnl ${VXL_LIB_PREFIX}vgl_algo ${VXL_LIB_PREFIX}vgl ${VXL_LIB_PREFIX}vul ${VXL_LIB_PREFIX}vsl ) #${VXL_LIB_PREFIX}vbl
 set(CURR_LIB_NAME vpgl)
 set_vxl_library_properties(
      TARGET_NAME ${VXL_LIB_PREFIX}${CURR_LIB_NAME}

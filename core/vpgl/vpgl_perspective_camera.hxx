@@ -23,8 +23,8 @@
 #include <vnl/io/vnl_io_matrix_fixed.h>
 #include <vnl/io/vnl_io_vector_fixed.h>
 #endif
-#include <vul/vul_file.h>
-#include <vul/vul_file_iterator.h>
+//#include <vul/vul_file.h>
+//#include <vul/vul_file_iterator.h>
 
 #include <cassert>
 #ifdef _MSC_VER
@@ -526,6 +526,7 @@ void vrml_write(std::ostream& str, vpgl_perspective_camera<Type> const& p, doubl
 }
 
 
+/*
 //: Return a list of camera's, loaded from the (name sorted) files from the given directory
 template <class T>
 std::vector<vpgl_perspective_camera<T> > cameras_from_directory(std::string dir, T)
@@ -537,7 +538,7 @@ std::vector<vpgl_perspective_camera<T> > cameras_from_directory(std::string dir,
   }
 
   //get all of the cam and image files, sort them
-  std::string camglob=dir+"/*";
+ std::string camglob=dir+std::string("/*");
   vul_file_iterator file_it(camglob.c_str());
   std::vector<std::string> cam_files;
   while (file_it) {
@@ -562,6 +563,7 @@ std::vector<vpgl_perspective_camera<T> > cameras_from_directory(std::string dir,
   }
   return camlist;
 }
+*/
 
 template <class T>
 double vpgl_persp_cam_distance( const vpgl_perspective_camera<T>& cam1, const vpgl_perspective_camera<T>& cam2)
@@ -632,7 +634,7 @@ template vgl_vector_3d<T> vpgl_persp_cam_base_line_vector(const vpgl_perspective
 template vgl_rotation_3d<T> vpgl_persp_cam_relative_orientation(const vpgl_perspective_camera<T>& cam1, \
                                                                 const vpgl_perspective_camera<T>& cam2); \
 template void vrml_write(std::ostream &s, const vpgl_perspective_camera<T >&, double rad); \
-template std::vector<vpgl_perspective_camera<T > > cameras_from_directory(std::string dir, T); \
+//template std::vector<vpgl_perspective_camera<T > > cameras_from_directory(std::string dir, T); \
  template vgl_frustum_3d<T> frustum(vpgl_perspective_camera<T> const& cam, T d_near, T d_far); \
 template std::ostream& operator<<(std::ostream&, const vpgl_perspective_camera<T >&); \
 template std::istream& operator>>(std::istream&, vpgl_perspective_camera<T >&)

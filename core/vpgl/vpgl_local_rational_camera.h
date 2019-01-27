@@ -40,7 +40,7 @@ class vpgl_local_rational_camera : public vpgl_rational_camera<T>
                              vpgl_rational_camera<T> const& rcam);
 
 
-  ~vpgl_local_rational_camera() override = default;
+  ~vpgl_local_rational_camera() = default;
 
   std::string type_name() const override { return "vpgl_local_rational_camera"; }
 

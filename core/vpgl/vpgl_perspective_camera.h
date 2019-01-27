@@ -78,7 +78,7 @@ class vpgl_perspective_camera : public vpgl_proj_camera<T>
   vpgl_perspective_camera( const vpgl_perspective_camera& cam );
 
   //: Destructor
-  ~vpgl_perspective_camera() override = default;
+  ~vpgl_perspective_camera() = default;
 
   std::string type_name() const override { return "vpgl_perspective_camera"; }
 
@@ -222,8 +222,8 @@ postmultiply( const vpgl_perspective_camera<T>& in_cam,
 }
 
 //: Return a list of camera's, loaded from the (name sorted) files from the given directory
-template <class T>
-std::vector<vpgl_perspective_camera<T> > cameras_from_directory(std::string dir, T);
+//template <class T>
+//std::vector<vpgl_perspective_camera<T> > cameras_from_directory(std::string dir, T);
 
 //: compute the frustrum of the camera view cone. The near plane
 //  the far plane distances are user defined.

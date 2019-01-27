@@ -148,7 +148,7 @@ class vpgl_rational_camera : public vpgl_camera<T>
                        std::vector<vpgl_scale_offset<T> >  scale_offsets)
     : rational_coeffs_(rational_coeffs), scale_offsets_(std::move(scale_offsets)) {}
 
-  ~vpgl_rational_camera() override = default;
+  ~vpgl_rational_camera() = default;
 
   std::string type_name() const override { return "vpgl_rational_camera"; }
 

@@ -44,7 +44,7 @@ class vpgl_generic_camera : public vpgl_camera<T>
   vpgl_generic_camera( vbl_array_2d<vgl_ray_3d<T> > const& rays);
   vpgl_generic_camera( std::vector<vbl_array_2d<vgl_ray_3d<T> > > const& rays,
                                               std::vector<int> nrs,   std::vector<int> ncs  );
-  ~vpgl_generic_camera() override = default;
+  ~vpgl_generic_camera() = default;
 
   std::string type_name() const override { return "vpgl_generic_camera"; }
 

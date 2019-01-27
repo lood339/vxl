@@ -121,8 +121,8 @@ class vpgl_generic_camera_convert
                        int ni, int nj, vpgl_generic_camera<double> & gen_cam, unsigned level = 0);
 
   //::convert an abstract camera to generic camera
-  static bool convert( vpgl_camera_double_sptr const& camera, int ni, int nj,
-                       vpgl_generic_camera<double> & gen_cam, unsigned level = 0);
+  //static bool convert( vpgl_camera_double_sptr const& camera, int ni, int nj,
+    //                   vpgl_generic_camera<double> & gen_cam, unsigned level = 0);
 
 #if HAS_GEOTIFF
   //: Convert a geocam (transformtaion matrix read from a geotiff header + an lvcs) to a generic camera

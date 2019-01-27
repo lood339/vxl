@@ -92,7 +92,7 @@ class vpgl_proj_camera : public vpgl_camera<T>
   //: Assignment.
   const vpgl_proj_camera<T>& operator=( const vpgl_proj_camera& cam );
 
-  ~vpgl_proj_camera() override;
+  ~vpgl_proj_camera(); //override
 
   //: Equality test
   inline bool operator==(vpgl_proj_camera<T> const &that) const

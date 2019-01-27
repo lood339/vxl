@@ -14,7 +14,7 @@
 
 #include <vpgl/vpgl_lvcs.h>
 #include <vpgl/vpgl_utm.h>
-#include <vul/vul_file.h>
+//#include <vul/vul_file.h>
 
 #include <vil/file_formats/vil_geotiff_header.h>
 #include <vil/file_formats/vil_tiff.h>
