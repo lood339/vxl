@@ -10,7 +10,7 @@
 #ifdef _MSC_VER
 #  include <vcl_msvc_warnings.h>
 #endif
-#include <vsl/vsl_binary_io.h>
+//#include <vsl/vsl_binary_io.h>
 //#include <vnl/io/vnl_io_matrix_fixed.h>
 #include <vgl/vgl_point_2d.h>
 #include <vgl/vgl_point_3d.h>

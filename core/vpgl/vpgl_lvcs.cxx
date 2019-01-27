@@ -970,6 +970,7 @@ bool vpgl_lvcs::operator==(vpgl_lvcs const& r) const
   return eq;
 }
 
+/*
 //: Binary save self to stream.
 void vpgl_lvcs::b_write( vsl_b_ostream& os ) const
 {
@@ -1024,3 +1025,4 @@ void vpgl_lvcs::b_read( vsl_b_istream& is )
     return;
   }
 }
+ */

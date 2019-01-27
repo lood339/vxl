@@ -14,7 +14,7 @@
 #include <vgl/vgl_point_3d.h>
 #include <vgl/vgl_ray_3d.h>
 #include <vnl/vnl_vector_fixed.h>
-#include <vnl/io/vnl_io_matrix_fixed.h>
+//#include <vnl/io/vnl_io_matrix_fixed.h>
 
 
 // CONSTRUCTORS:--------------------------------------------------------------------

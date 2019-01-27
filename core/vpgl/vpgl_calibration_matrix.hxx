@@ -7,7 +7,7 @@
 #include "vpgl_calibration_matrix.h"
 
 #include <vgl/vgl_point_2d.h>
-#include <vgl/io/vgl_io_point_2d.h>
+//#include <vgl/io/vgl_io_point_2d.h>
 #include <vnl/vnl_inverse.h>
 #include <vnl/vnl_vector_fixed.h>
 #include <vnl/vnl_matrix_fixed.h>

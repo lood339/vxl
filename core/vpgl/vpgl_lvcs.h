@@ -40,7 +40,7 @@
 #ifdef _MSC_VER
 #  include <vcl_msvc_warnings.h>
 #endif
-#include <vsl/vsl_binary_io.h>
+//#include <vsl/vsl_binary_io.h>
 #include <vbl/vbl_ref_count.h>
 //#include <vpgl/vpgl_dll.h>
 #include <vpgl/vpgl_export.h>
@@ -122,7 +122,7 @@ class vpgl_lvcs : public vbl_ref_count
   inline LenUnits local_length_unit() const{return this->localXYZUnit_;}
   inline AngUnits geo_angle_unit() const {return this->geo_angle_unit_;}
   void print(std::ostream&) const;
-  bool save(std::string fname) { std::ofstream of(fname.c_str()); if (of) { print(of); return true; } return false; }
+  //bool save(std::string fname) { std::ofstream of(fname.c_str()); if (of) { print(of); return true; } return false; }
   void read(std::istream& strm);
   void write(std::ostream& strm);  // write just "read" would read
   friend std::ostream& operator << (std::ostream& os, const vpgl_lvcs& local_coord_sys);
@@ -132,10 +132,10 @@ class vpgl_lvcs : public vbl_ref_count
   void get_utm_origin(double& x, double& y, double& elev, int& zone) const;
 
   //: Binary save self to stream.
-  void b_write(vsl_b_ostream &os) const;
+  //void b_write(vsl_b_ostream &os) const;
 
   //: Binary load self from stream.
-  void b_read(vsl_b_istream &is);
+  //void b_read(vsl_b_istream &is);
 
   //: Return IO version number;
   short version() const { return 1; }

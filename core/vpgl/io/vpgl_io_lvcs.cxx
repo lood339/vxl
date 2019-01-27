@@ -3,7 +3,7 @@
 // \file
 #include <vpgl/vpgl_lvcs.h>
 #include <vnl/io/vnl_io_matrix_fixed.h>
-
+/*
 void vsl_b_write(vsl_b_ostream & os, vpgl_lvcs const& lvcs)
 {
   if (!os) return;
@@ -94,3 +94,4 @@ void vsl_b_read(vsl_b_istream & is, vpgl_lvcs_sptr &lvcs_sptr)
   vsl_b_read(is, *lvcs);
   lvcs_sptr = lvcs;
 }
+ */
