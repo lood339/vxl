@@ -61,7 +61,11 @@ optimize_p(std::vector<vgl_homg_point_2d<double> > const& points1,
   //number of points must be the same
   assert(points1.size() == points2.size());
   int n = points1.size();
-  assert(n>4);
+    if(n <= 4) {
+        // < 4 ?
+        return false;
+    }
+    
 
   //compute the normalizing transforms
   vgl_norm_trans_2d<double> tr1, tr2;
