@@ -4,7 +4,11 @@ VXL (the Vision-something-Libraries) is a collection of C++ libraries designed f
 
 A comprehensive description of the VXL project can be views at https://vxl.github.io/
 
-This repository is for simple compilation.
+This repository is for simple compilation in Mac OS.
+It only compiles following libraries: vgl, vnl and vpgl in core and supporting libraries.  
+Supporting liabaries: 
+libclipper.a  libtestlib.a	libvcl.a  
+libnetlib.a  	libv3p_netlib.a  	libvcsl.a  
 
 
 MacOS:  
@@ -28,4 +32,4 @@ and the library folder
 
 vxl_2.0/lib
 
-
+In Xcode, add pathes to Header Search Paths, Library Search Paths and Runpath Search Paths  
