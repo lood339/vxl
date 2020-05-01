@@ -5,3 +5,27 @@ VXL (the Vision-something-Libraries) is a collection of C++ libraries designed f
 A comprehensive description of the VXL project can be views at https://vxl.github.io/
 
 This repository is for simple compilation.
+
+
+MacOS:  
+Assume we are in the directory: /Code  
+git clone https://github.com/lood339/vxl.git  
+cd vxl  
+mkdir build  
+cd build  
+mkdir vxl_2.0  
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/Code/vxl/build/vxl_2.0 ../  
+make -j4  
+make install   
+
+Then, the head files and library files will be in vxl_2.0  
+To use vxl, you have to add two headfile folders
+
+vxl_2.0/include/vxl/core   
+vxl_2.0/include/vxl/vcl  
+
+and the library folder
+
+vxl_2.0/lib
+
+
