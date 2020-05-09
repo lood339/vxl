@@ -6,7 +6,7 @@
 #ifdef _MSC_VER
 #  include <vcl_msvc_warnings.h>
 #endif
-#include <vsl/vsl_basic_xml_element.h>
+//#include <vsl/vsl_basic_xml_element.h>
 #include <vpgl/vpgl_datum_conversion.h>
 #include <vpgl/vpgl_earth_constants.h>
 #include <vpgl/vpgl_utm.h>

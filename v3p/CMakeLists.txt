@@ -62,3 +62,5 @@ if(VXL_BUILD_CORE_IMAGING)
   add_subdirectory(openjpeg2)
   add_subdirectory(rply)
 endif()
+
+

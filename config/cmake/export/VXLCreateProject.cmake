@@ -12,9 +12,9 @@ include( ${MODULE_PATH}/FindPNG.cmake )
 include( ${MODULE_PATH}/FindJPEG.cmake )
 include( ${MODULE_PATH}/FindTIFF.cmake )
 include( ${MODULE_PATH}/FindGEOTIFF.cmake )
-set( EXPAT_FIND_QUIETLY "YES" )
-include( ${VXL_ROOT_SOURCE_DIR}/contrib/brl/bmods/FindEXPAT.cmake )
-set( EXPAT_FIND_QUIETLY )
+#set( EXPAT_FIND_QUIETLY "YES" )
+#include( ${VXL_ROOT_SOURCE_DIR}/extra_cmake/FindEXPAT.cmake )
+#set( EXPAT_FIND_QUIETLY )
 
 # Save library dependencies.
 set(VXL_CMAKE_DOXYGEN_DIR  ${VXL_ROOT_SOURCE_DIR}/config/cmake/doxygen)

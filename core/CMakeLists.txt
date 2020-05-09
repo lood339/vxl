@@ -74,30 +74,30 @@ if(VXL_BUILD_CORE_IMAGING ) ## BRL still depends on vil1 AND NOT VXL_BUILD_NONDE
 endif()
 
 
-if(VXL_BUILD_CORE_SERIALISATION)
+#if(VXL_BUILD_CORE_SERIALISATION)
   # Fast Binary IO
-  add_subdirectory(vsl)
+  #add_subdirectory(vsl)
 
-  if(VXL_BUILD_CORE_UTILITIES)
-    add_subdirectory(vul/io)
-    add_subdirectory(vbl/io)
-  endif()
+  #if(VXL_BUILD_CORE_UTILITIES)
+  #  add_subdirectory(vul/io)
+  #  add_subdirectory(vbl/io)
+  #endif()
 
-  if(VXL_BUILD_CORE_NUMERICS)
-    add_subdirectory(vnl/io)
-    add_subdirectory(vnl/xio)
-  endif()
+  #if(VXL_BUILD_CORE_IMAGING)
+  #  add_subdirectory(vil/io)
+  #endif()
+#endif()
 
-  if(VXL_BUILD_CORE_GEOMETRY)
-    add_subdirectory(vgl/io)
-    add_subdirectory(vgl/xio)
-  endif()
 
-  if(VXL_BUILD_CORE_IMAGING)
-    add_subdirectory(vil/io)
-  endif()
-endif()
+#if(VXL_BUILD_CORE_NUMERICS)
+#  add_subdirectory(vnl/io)
+#  add_subdirectory(vnl/xio)
+#endif()
 
+#if(VXL_BUILD_CORE_GEOMETRY)
+#  add_subdirectory(vgl/io)
+#  add_subdirectory(vgl/xio)
+#endif()
 
 # coordinate systems
 if(VXL_BUILD_CORE_GEOMETRY AND VXL_BUILD_CORE_NUMERICS)
@@ -107,9 +107,9 @@ endif()
 
 
 # probability distributions
-if(VXL_BUILD_CORE_PROBABILITY)
-  add_subdirectory(vpdl)
-endif()
+#if(VXL_BUILD_CORE_PROBABILITY)
+#  add_subdirectory(vpdl)
+#endif()
 
 
 # multi-platform GUI toolkit
