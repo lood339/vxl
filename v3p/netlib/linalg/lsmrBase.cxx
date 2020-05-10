@@ -16,7 +16,7 @@
  *
  *=========================================================================*/
 #include "lsmrBase.h"
-#include "vcl_compiler_detection.h"
+//#include "vcl_compiler_detection.h"
 
 #include <algorithm>
 #include <cmath>

@@ -9,9 +9,9 @@
 
 #include <vpgl/vpgl_rational_camera.h>
 #include <vgl/algo/vgl_rotation_3d.h>
-#include <vpgl/vpgl_local_rational_camera.h>
+//#include <vpgl/vpgl_local_rational_camera.h>
 #include <vpgl/vpgl_perspective_camera.h>
-#include <vpgl/vpgl_generic_camera.h>
+//#include <vpgl/vpgl_generic_camera.h>
 #include <vnl/vnl_double_3.h>
 #include <vgl/vgl_point_3d.h>
 #include <vgl/vgl_vector_3d.h>
@@ -76,6 +76,7 @@ class vpgl_ray
                   vgl_point_3d<double> const& point_3d,
                   vgl_ray_3d<double>& ray);
 
+  /*
   //: compute a ray in local Cartesian coordinates at a given (u, v)
   static bool ray(vpgl_local_rational_camera<double> const& lrcam,
                   const double u, const double v,
@@ -91,6 +92,7 @@ class vpgl_ray
                         const vgl_point_2d<double> image_point1,
                         const vgl_point_2d<double> image_point2,
                         vgl_plane_3d<double>& plane);
+  */
   // ====== projective camera =====
   static bool ray(vpgl_proj_camera<double> const& cam,
                   vgl_point_3d<double> const& world_pt,
@@ -111,10 +113,12 @@ class vpgl_ray
     return  vpgl_ray::principal_ray(*procam, pray);
   }
 
+  /*
   // ====== generic camera =====
   static bool ray(vpgl_generic_camera<double> const& cam,
                   vgl_point_3d<double> const& world_pt,
                   vgl_ray_3d<double>& ray);
+  */
 
 
   // ====== operations on rotation matrices with respect to camera rays ======

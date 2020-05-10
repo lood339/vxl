@@ -526,7 +526,7 @@ void vrml_write(std::ostream& str, vpgl_perspective_camera<Type> const& p, doubl
 }
 
 
-/*
+#if 0
 //: Return a list of camera's, loaded from the (name sorted) files from the given directory
 template <class T>
 std::vector<vpgl_perspective_camera<T> > cameras_from_directory(std::string dir, T)
@@ -563,7 +563,8 @@ std::vector<vpgl_perspective_camera<T> > cameras_from_directory(std::string dir,
   }
   return camlist;
 }
-*/
+#endif
+
 
 template <class T>
 double vpgl_persp_cam_distance( const vpgl_perspective_camera<T>& cam1, const vpgl_perspective_camera<T>& cam2)

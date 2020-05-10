@@ -29,16 +29,16 @@ INSTALL_NOBASE_HEADER_FILES(${prefix} ${global_sources})
 vxl_configure_file(${CMAKE_CURRENT_LIST_DIR}/vxl_config.h.in ${PROJECT_BINARY_DIR}/vxl_config.h ${prefix})
 include_directories(${PROJECT_BINARY_DIR})
 
-if(VXL_BUILD_CORE_UTILITIES)
+#if(VXL_BUILD_CORE_UTILITIES)
   # POSIX layer
-  add_subdirectory(vpl)
+#  add_subdirectory(vpl)
 
   # utilities
-  add_subdirectory(vul)
+#  add_subdirectory(vul)
 
   # "basics" (templates)
-  add_subdirectory(vbl)
-endif()
+#  add_subdirectory(vbl)
+#endif()
 
 
 # numerics
@@ -101,7 +101,7 @@ endif()
 
 # coordinate systems
 if(VXL_BUILD_CORE_GEOMETRY AND VXL_BUILD_CORE_NUMERICS)
-  add_subdirectory(vcsl)
+  #add_subdirectory(vcsl)
   add_subdirectory(vpgl)
 endif()
 
@@ -135,7 +135,7 @@ else()
 endif ()
 
 # common test executable
-add_subdirectory(testlib)
+#add_subdirectory(testlib)
 
 # Tests that check and output the vxl configuration
 # NOTE: some external projects remove the tests directory (aka ITK)

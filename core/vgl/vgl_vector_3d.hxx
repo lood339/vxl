@@ -10,12 +10,12 @@
 #include "vgl_vector_3d.h"
 #include "vgl_tolerance.h"
 
-#include <vcl_compiler_detection.h>
+//#include <vcl_compiler_detection.h>
 #ifdef _MSC_VER
 #  include <vcl_msvc_warnings.h>
 #endif
 #include <cassert>
-#include <vcl_deprecated.h>
+//#include <vcl_deprecated.h>
 
 template <class T>
 double vgl_vector_3d<T>::length() const
@@ -28,7 +28,8 @@ double vgl_vector_3d<T>::length() const
 template <class T>
 vgl_vector_3d<T> vgl_vector_3d<T>::orthogonal_vectors(double s) const
 {
-  VXL_DEPRECATED_MACRO("vgl_vector_3d<T>::orthogonal_vectors(double s)");
+  //VXL_DEPRECATED_MACRO("vgl_vector_3d<T>::orthogonal_vectors(double s)");
+  printf("vgl_vector_3d<T>::orthogonal_vectors(double s) is deprecated.");
   return ::orthogonal_vectors(*this, s);
 }
 

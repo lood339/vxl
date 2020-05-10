@@ -16,7 +16,7 @@
  *
  *=========================================================================*/
 #include "lsmrDense.h"
-#include "vcl_compiler_detection.h"
+//#include "vcl_compiler_detection.h"
 
 lsmrDense::lsmrDense()
 {

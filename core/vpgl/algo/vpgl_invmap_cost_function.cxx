@@ -3,11 +3,11 @@
 #include "vpgl_invmap_cost_function.h"
 //:
 // \file
-#include <vcl_compiler_detection.h>
+//#include <vcl_compiler_detection.h>
 #ifdef _MSC_VER
 #  include <vcl_msvc_warnings.h>
 #endif
-#include <vcl_deprecated.h>
+//#include <vcl_deprecated.h>
 
 vpgl_invmap_cost_function::
 vpgl_invmap_cost_function(vnl_vector_fixed<double, 2> const& image_point,
@@ -80,7 +80,8 @@ set_params(vnl_vector_fixed<double,3> const& xyz, vnl_vector_fixed<double,2> &x)
 void vpgl_invmap_cost_function::
 set_params(vnl_vector_fixed<double, 3> const& xyz, vnl_vector<double> &x)
 {
-  VXL_DEPRECATED_MACRO("vpgl_invmap_cost_function::set_params(, vnl_vector<double>&)");
+  //VXL_DEPRECATED_MACRO("vpgl_invmap_cost_function::set_params(, vnl_vector<double>&)");
+  printf("vpgl_invmap_cost_function::set_params(, vnl_vector<double>&) is deprecated.\n");
   switch (pp_)
   {
     case X_Y:
@@ -147,7 +148,9 @@ point_3d(vnl_vector_fixed<double,2> const& x, vnl_vector_fixed<double,3>& xyz)
 void vpgl_invmap_cost_function::
 point_3d(vnl_vector<double> const& x, vnl_vector_fixed<double, 3>& xyz)
 {
-  VXL_DEPRECATED_MACRO("vpgl_invmap_cost_function::point_3d(vnl_vector<double>,)");
+  //VXL_DEPRECATED_MACRO("vpgl_invmap_cost_function::point_3d(vnl_vector<double>,)");
+  printf("void vpgl_invmap_cost_function::point_3d(vnl_vector<double> const& x, ... is deprecated\n");
+         
   //Switch on plane parameterization
   switch (pp_)
   {

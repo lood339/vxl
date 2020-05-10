@@ -275,7 +275,7 @@ CMAKE_DEPENDENT_OPTION(VXL_BUILD_CORE_PROBABILITY "Build VXL's probability libra
                        "VXL_BUILD_CORE_NUMERICS;NOT VXL_BUILD_CORE_NUMERICS_ONLY" OFF)
 
 # Build the core vxl + support libraries
-add_subdirectory(vcl)
+# add_subdirectory(vcl)
 add_subdirectory(v3p)
 add_subdirectory(core)
 

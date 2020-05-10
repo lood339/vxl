@@ -13,7 +13,7 @@
 // \endverbatim
 
 #include <vpgl/vpgl_rational_camera.h>
-#include <vpgl/vpgl_local_rational_camera.h>
+//#include <vpgl/vpgl_local_rational_camera.h>
 #include <vpgl/vpgl_proj_camera.h>
 #include <vgl/vgl_fwd.h>
 #include <vnl/vnl_double_2.h>
@@ -29,6 +29,7 @@ class vpgl_backproject
   // An iterative solution using forward projection
   // vnl interface
 
+  
   //:Backproject an image point onto a plane, start with initial_guess
   static bool bproj_plane(const vpgl_camera<double>* cam,
                           vnl_double_2 const& image_point,
@@ -37,6 +38,7 @@ class vpgl_backproject
                           vnl_double_3& world_point,
                           double error_tol = 0.05,
                           double relative_diameter = 1.0);
+  
 
        // === vgl interface ===
 
@@ -80,12 +82,14 @@ class vpgl_backproject
                                  vgl_vector_2d<double> const& vect,
                                  vgl_plane_3d<double>& plane);
 
+/*
   //: Use backprojection to determine direction to camera from 3-d point
   static bool direction_to_camera(vpgl_local_rational_camera<double> const& cam,
                                   vgl_point_3d<double> const& point,
                                   vgl_vector_3d<double> &to_camera,
                                   double error_tol = 0.05,
                                   double relative_diameter = 1.0);
+*/
 
  private:
   //: constructor private - static methods only

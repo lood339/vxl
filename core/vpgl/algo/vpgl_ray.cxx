@@ -22,7 +22,7 @@ bool vpgl_ray::ray(const vpgl_camera<double>* cam,
 {
   // special case of a generic camera
   if (cam->type_name()=="vpgl_generic_camera")
-  {
+  { /*
     vgl_point_3d<double> p(point_3d[0], point_3d[1], point_3d[2]);
     vgl_ray_3d<double> ray;
     const auto* gcam = dynamic_cast<const vpgl_generic_camera<double>*>(cam);
@@ -30,6 +30,9 @@ bool vpgl_ray::ray(const vpgl_camera<double>* cam,
     vgl_vector_3d<double> dir = ray.direction();
     r = vnl_double_3(dir.x(), dir.y(), dir.z());
     return true;
+    */
+    printf("Error: vpgl_generic_camera is not suported.\n");
+    return false;
   }
   //create an image point
   double u, v;
@@ -133,7 +136,7 @@ bool vpgl_ray::ray(vpgl_rational_camera<double> const& rcam,
    return vpgl_ray::ray(cam,point_3d,zmax,ray);
 }
 
-
+/*
 // compute a ray in local Cartesian coordinates for a local rational cam
 bool vpgl_ray::ray(vpgl_local_rational_camera<double> const& lrcam,
                    const double u, const double v,
@@ -224,6 +227,7 @@ bool vpgl_ray::plane_ray(vpgl_local_rational_camera<double> const& lrcam,
 
   return true;
 }
+*/
 
 bool vpgl_ray::ray(vpgl_proj_camera<double> const& cam,
                    vgl_point_3d<double> const& world_pt,
@@ -260,6 +264,7 @@ bool vpgl_ray::ray(vpgl_perspective_camera<double> const& cam,
   return true;
 }
 
+/*
 bool vpgl_ray::ray(vpgl_generic_camera<double> const& cam,
                    vgl_point_3d<double> const& world_pt,
                    vgl_ray_3d<double>& ray)
@@ -267,6 +272,7 @@ bool vpgl_ray::ray(vpgl_generic_camera<double> const& cam,
   ray = cam.ray(world_pt);
   return true;
 }
+*/
 
 double vpgl_ray::angle_between_rays(vgl_rotation_3d<double> const& r0,
                                     vgl_rotation_3d<double> const& r1)

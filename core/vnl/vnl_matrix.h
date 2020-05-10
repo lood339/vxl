@@ -34,7 +34,7 @@
 // \endverbatim
 
 #include <iosfwd>
-#include <vcl_compiler.h>
+//#include <vcl_compiler.h>
 #ifdef _MSC_VER
 #  include <vcl_msvc_warnings.h>
 #endif
@@ -566,7 +566,7 @@ class VNL_EXPORT vnl_matrix
 
   //: abort if size is not as expected
   // This function does or tests nothing if NDEBUG is defined
-  void assert_size(unsigned VXL_USED_IN_DEBUG(r), unsigned VXL_USED_IN_DEBUG(c)) const
+  void assert_size(unsigned r, unsigned c) const
   {
 #ifndef NDEBUG
     assert_size_internal(r, c);

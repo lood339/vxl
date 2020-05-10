@@ -7,8 +7,9 @@
 #include <vgl/vgl_plane_3d.h>
 #include <vnl/algo/vnl_amoeba.h>
 #include <vgl/vgl_intersection.h>
-#include <vpgl/vpgl_generic_camera.h>
+//#include <vpgl/vpgl_generic_camera.h>
 #include <vnl/vnl_random.h>
+
 
 //: Backproject an image point onto a plane, start with initial_guess
 bool vpgl_backproject::bproj_plane(const vpgl_camera<double>* cam,
@@ -21,7 +22,8 @@ bool vpgl_backproject::bproj_plane(const vpgl_camera<double>* cam,
 {
   // special case of a generic camera
   if (cam->type_name()=="vpgl_generic_camera")
-  {
+  { 
+    /*
     vgl_ray_3d<double> ray;
     vgl_point_3d<double> ipt;
     vgl_plane_3d<double> gplane(plane[0], plane[1], plane[2], plane[3]);
@@ -31,6 +33,9 @@ bool vpgl_backproject::bproj_plane(const vpgl_camera<double>* cam,
       return false;
     world_point[0]=ipt.x(); world_point[1]=ipt.y(); world_point[2]=ipt.z();
     return true;
+    */
+    printf("Error: vpgl_generic_camera is not supported.\n");
+    return false;
   }
   // general case
   vpgl_invmap_cost_function cf(image_point, plane, cam);
@@ -57,6 +62,7 @@ bool vpgl_backproject::bproj_plane(const vpgl_camera<double>* cam,
   }
   return true;
 }
+
 
   // vgl interface
 
@@ -130,6 +136,7 @@ vpgl_backproject::bproj_point_vector(vpgl_proj_camera<double> const& cam,
 }
 
 
+/*
 //: Use backprojection to determine direction to camera from 3-d point
 bool vpgl_backproject::direction_to_camera(vpgl_local_rational_camera<double> const& cam,
                                            vgl_point_3d<double> const& point,
@@ -155,3 +162,4 @@ bool vpgl_backproject::direction_to_camera(vpgl_local_rational_camera<double> co
   return true;
 
 }
+*/

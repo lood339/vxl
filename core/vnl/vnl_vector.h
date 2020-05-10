@@ -15,7 +15,7 @@
 #include <iosfwd>
 #include <vnl/vnl_error.h>
 
-#include <vcl_compiler.h>
+//#include <vcl_compiler.h>
 #ifdef _MSC_VER
 #  include <vcl_msvc_warnings.h>
 #endif
@@ -344,7 +344,7 @@ class VNL_EXPORT vnl_vector
 
   //: Check that size()==sz if not, abort();
   // This function does or tests nothing if NDEBUG is defined
-  void assert_size(size_t VXL_USED_IN_DEBUG(sz) ) const {
+  void assert_size(size_t sz ) const {
 #ifndef NDEBUG
     assert_size_internal(sz);
 #endif

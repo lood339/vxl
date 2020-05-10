@@ -31,8 +31,8 @@
 #include <vgl/vgl_homg_point_2d.h>
 #include <vgl/vgl_ray_3d.h>
 #include <vgl/vgl_plane_3d.h>
-#include <vbl/vbl_array_2d.h>
-#include <vpgl/vpgl_lvcs.h>
+//#include <vbl/vbl_array_2d.h>
+//#include <vpgl/vpgl_lvcs.h>
 #include <vpgl/algo/vpgl_backproject.h>
 
 
@@ -470,7 +470,7 @@ convert( vpgl_rational_camera<double> const& rat_cam,
   return true;
 }
 
-
+/*
 bool vpgl_perspective_camera_convert::
 convert_local( vpgl_rational_camera<double> const& rat_cam,
                vgl_box_3d<double> const& approximation_volume,
@@ -638,6 +638,7 @@ convert_local( vpgl_rational_camera<double> const& rat_cam,
            << "final cam\n" << camera << '\n';
   return true;
 }
+*/
 
 //
 //linear interpolation based on a set of 4 neighboring rays
@@ -674,6 +675,7 @@ static bool interp_ray(std::vector<vgl_ray_3d<double> > const& ray_nbrs,
   return true;
 }
 
+/*
 // convert tolerances on ray origin and ray direction to test interpolation
 static bool ray_tol(vpgl_local_rational_camera<double> const& rat_cam,
                     double mid_u, double mid_v,
@@ -704,6 +706,7 @@ static bool ray_tol(vpgl_local_rational_camera<double> const& rat_cam,
   dir_tol = tfact*ang;
   return true;
 }
+*/
 
 // produce rays at sub pixel locations by interpolating four neighbors
 //
@@ -718,7 +721,7 @@ static bool ray_tol(vpgl_local_rational_camera<double> const& rat_cam,
 // the neighbor rays are shown as X's
 // This method is used to populate higher resolution layers of the
 // ray pyramid
-
+/*
 bool vpgl_generic_camera_convert::
 upsample_rays(std::vector<vgl_ray_3d<double> > const& ray_nbrs,
               vgl_ray_3d<double> const& ray,
@@ -757,7 +760,9 @@ upsample_rays(std::vector<vgl_ray_3d<double> > const& ray_nbrs,
 
   return true;
 }
+*/
 
+/*
 // r0 and r1 are rays spaced a unit grid distane apart (either row or col)
 // r is the interpolated ray at n_grid unit distances past r1
 vgl_ray_3d<double>
@@ -771,8 +776,9 @@ vpgl_generic_camera_convert::interp_pair(vgl_ray_3d<double> const& r0,
   vgl_vector_3d<double> intp_dir = r1.direction()+ n_grid*d01;
   return vgl_ray_3d<double>(intp_org, intp_dir);
 }
+*/
 
-
+/*
 //
 // convert a generic camera from a local rational camera
 // the approach is to form a pyramid and convert rays by
@@ -804,6 +810,7 @@ convert( vpgl_local_rational_camera<double> const& rat_cam,
   rat_cam.lvcs().global_to_local(lon,lat,el_high,vpgl_lvcs::wgs84,x,y,z_high,vpgl_lvcs::DEG);
   return convert(rat_cam, ni, nj, gen_cam, z_low, z_high, level);
 }
+*/
 
 //
 // convert a generic camera from a local rational camera
@@ -815,6 +822,7 @@ convert( vpgl_local_rational_camera<double> const& rat_cam,
 // The remaining layers of the pyramid are filled in by interpolation
 //
 #if 0
+/*
 bool vpgl_generic_camera_convert::
 convert( vpgl_local_rational_camera<double> const& rat_cam,
          int ni, int nj, vpgl_generic_camera<double> & gen_cam,
@@ -976,9 +984,11 @@ convert( vpgl_local_rational_camera<double> const& rat_cam,
   else
     return false;
 }
+*/
+
 #endif
 
-
+/*
 bool vpgl_generic_camera_convert::pyramid_est(vpgl_local_rational_camera<double> const& rat_cam,
                                               int ni, int nj,int offseti, int offsetj,
                                                double local_z_min, double local_z_max,
@@ -1107,6 +1117,9 @@ bool vpgl_generic_camera_convert::pyramid_est(vpgl_local_rational_camera<double>
   }
   return true;
 }
+*/
+
+/*
 #if 1
 //: Implementation of breaking up images in 256x256 blocks
 bool vpgl_generic_camera_convert::
@@ -1188,7 +1201,10 @@ convert( vpgl_local_rational_camera<double> const& rat_cam,
       return false;
 }
 #endif
-#if 1
+*/
+
+
+#if 0
 bool vpgl_generic_camera_convert::
 convert_bruteforce( vpgl_local_rational_camera<double> const& rat_cam,
          int gni, int gnj, vpgl_generic_camera<double> & gen_cam,
@@ -1221,6 +1237,8 @@ convert_bruteforce( vpgl_local_rational_camera<double> const& rat_cam,
       return true;
 }
 #endif
+
+/*
 bool vpgl_generic_camera_convert::
 convert( vpgl_proj_camera<double> const& prj_cam, int ni, int nj,
          vpgl_generic_camera<double> & gen_cam, unsigned level)
@@ -1324,6 +1342,7 @@ convert( vpgl_affine_camera<double> const& aff_cam, int ni, int nj,
   gen_cam = vpgl_generic_camera<double>(rays);
   return true;
 }
+*/
 
 /*
 bool vpgl_generic_camera_convert::
@@ -1354,6 +1373,7 @@ convert( vpgl_camera_double_sptr const& camera, int ni, int nj,
 
 
 #if HAS_GEOTIFF
+/*
 //: Convert a geocam (transformtaion matrix read from a geotiff header + an lvcs) to a generic camera
 bool vpgl_generic_camera_convert::convert( vpgl_geo_camera& geocam, int ni, int nj, double height,
                                            vpgl_generic_camera<double> & gen_cam, unsigned level)
@@ -1397,7 +1417,9 @@ bool vpgl_generic_camera_convert::convert( vpgl_geo_camera& geocam, int ni, int 
   gen_cam = vpgl_generic_camera<double>(rays);
   return true;
 }
+*/
 
+/*
 bool vpgl_affine_camera_convert::
 convert( vpgl_local_rational_camera<double> const& camera_in,
          vgl_box_3d<double> const& region_of_interest,
@@ -1430,7 +1452,9 @@ convert( vpgl_local_rational_camera<double> const& camera_in,
   camera_out.orient_ray_direction(vgl_vector_3d<double>(0,0,-1));
   return success;
 }
+*/
 #else
+/*
 bool vpgl_affine_camera_convert::
 convert(vpgl_local_rational_camera<double> const& camera_in,
   vgl_box_3d<double> const& region_of_interest,
@@ -1439,6 +1463,7 @@ convert(vpgl_local_rational_camera<double> const& camera_in,
 {
   return false; //Always report failure if GEOTIFF not available.
 }
+*/
 #endif // HAS_GEOTIFF
 
 #endif // vpgl_camera_convert_cxx_

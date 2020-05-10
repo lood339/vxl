@@ -20,8 +20,8 @@
 #include <vpgl/vpgl_proj_camera.h>
 #include <vpgl/vpgl_affine_camera.h>
 #include <vpgl/vpgl_rational_camera.h>
-#include <vpgl/vpgl_local_rational_camera.h>
-#include <vpgl/vpgl_generic_camera.h>
+//#include <vpgl/vpgl_local_rational_camera.h>
+//#include <vpgl/vpgl_generic_camera.h>
 #include <vgl/algo/vgl_h_matrix_3d.h>
 
 //#include <vil/vil_config.h>
@@ -64,21 +64,25 @@ class vpgl_perspective_camera_convert
                        vpgl_perspective_camera<double>& camera,
                        vgl_h_matrix_3d<double>& norm_trans);
 
+  /*
   //: Convert from rational camera using a local Euclidean coordinate system.
   static bool convert_local( vpgl_rational_camera<double> const& rat_cam,
                              vgl_box_3d<double> const& approximation_volume,
                              vpgl_perspective_camera<double>& camera,
                              vgl_h_matrix_3d<double>& norm_trans);
+  */
 
  private:
   vpgl_perspective_camera_convert() = delete;
 };
 
+/*
 //:Various methods for converting to a generic camera
 class vpgl_generic_camera_convert
 {
  public:
 
+  
   //: Convert a local rational camera to a generic camera
   static bool convert( vpgl_local_rational_camera<double> const& rat_cam,
                        int ni, int nj,
@@ -93,6 +97,7 @@ class vpgl_generic_camera_convert
   static bool convert_bruteforce( vpgl_local_rational_camera<double> const& rat_cam,
                                  int gni, int gnj, vpgl_generic_camera<double> & gen_cam,
                                  double local_z_min, double local_z_max, unsigned level);
+  
   //: Convert a proj_camera to a generic camera
   static bool convert( vpgl_proj_camera<double> const& prj_cam,
                        int ni, int nj,
@@ -146,26 +151,29 @@ class vpgl_generic_camera_convert
   static vgl_ray_3d<double> interp_pair(vgl_ray_3d<double> const& r0,
                                         vgl_ray_3d<double> const& r1,
                                         double n_grid);
+  
   static bool pyramid_est(vpgl_local_rational_camera<double> const& rat_cam,
                                               int ni, int nj,int offseti, int offsetj,
                                                double local_z_min, double local_z_max,
                                               int n_levels,std::vector<int> nr, std::vector<int> nc,
                                               std::vector<unsigned int> scl,std::vector<vbl_array_2d<vgl_ray_3d<double> > > & ray_pyr );
-
+  
   vpgl_generic_camera_convert() = delete;
 };
+*/
 
 //:methods for computing to an affine camera
 class vpgl_affine_camera_convert
 {
  public:
 
+  /*
   //: Convert from rational camera using a local Euclidean coordinate system.
   static bool convert( vpgl_local_rational_camera<double> const& camera_in,
                        vgl_box_3d<double> const& region_of_interest,
                        vpgl_affine_camera<double>& camera_out,
                        unsigned int num_points=10000);
-
+  */
  private:
   vpgl_affine_camera_convert() = delete;
 };

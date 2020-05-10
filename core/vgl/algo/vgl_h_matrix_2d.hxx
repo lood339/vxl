@@ -10,12 +10,12 @@
 #include <vnl/vnl_inverse.h>
 #include <vnl/vnl_vector_fixed.h>
 #include <vnl/algo/vnl_svd.h>
-#include <vcl_compiler_detection.h>
+//#include <vcl_compiler_detection.h>
 #ifdef _MSC_VER
 #  include <vcl_msvc_warnings.h>
 #endif
 #include <cassert>
-#include <vcl_deprecated.h>
+//#include <vcl_deprecated.h>
 
 template <class T>
 vgl_h_matrix_2d<T>::vgl_h_matrix_2d(std::istream& s)
@@ -206,7 +206,8 @@ void vgl_h_matrix_2d<T>::get(vnl_matrix_fixed<T,3,3>* H) const
 template <class T>
 void vgl_h_matrix_2d<T>::get(vnl_matrix<T>* H) const
 {
-  VXL_DEPRECATED_MACRO("vgl_h_matrix_2d<T>::get(vnl_matrix<T>*) const");
+  //VXL_DEPRECATED_MACRO("vgl_h_matrix_2d<T>::get(vnl_matrix<T>*) const");
+  printf("vgl_h_matrix_2d<T>::get(vnl_matrix<T>*) const is deprecated\n");
   *H = t12_matrix_.as_ref(); // size 3x3
 }
 
@@ -447,7 +448,8 @@ template <class T>
 vgl_h_matrix_2d<T>&
 vgl_h_matrix_2d<T>::set_affine(vnl_matrix<T> const& M23)
 {
-  VXL_DEPRECATED_MACRO("vgl_h_matrix_2d<T>::set_affine(vnl_matrix<T> const&)");
+  //VXL_DEPRECATED_MACRO("vgl_h_matrix_2d<T>::set_affine(vnl_matrix<T> const&)");
+  printf("vgl_h_matrix_2d<T>::set_affine(vnl_matrix<T> const&)\n");
   assert (M23.rows()==2 && M23.columns()==3);
   for (unsigned r = 0; r<2; ++r)
     for (unsigned c = 0; c<3; ++c)

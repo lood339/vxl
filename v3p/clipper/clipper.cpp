@@ -47,7 +47,7 @@
 #include <ostream>
 #include <functional>
 
-#include "vcl_compiler_detection.h"
+//#include "vcl_compiler_detection.h"
 
 namespace ClipperLib {
 

@@ -10,12 +10,12 @@
 #include <vnl/vnl_inverse.h>
 #include <vnl/vnl_vector_fixed.h>
 #include <vnl/algo/vnl_svd.h>
-#include <vcl_compiler_detection.h>
+//#include <vcl_compiler_detection.h>
 #ifdef _MSC_VER
 #  include <vcl_msvc_warnings.h>
 #endif
 #include <cassert>
-# include <vcl_deprecated.h>
+//# include <vcl_deprecated.h>
 
 //--------------------------------------------------------------------------------
 template <class T>
@@ -136,7 +136,8 @@ void vgl_h_matrix_1d<T>::get(vnl_matrix_fixed<T,2,2>* H) const
 template <class T>
 void vgl_h_matrix_1d<T>::get(vnl_matrix<T>* H) const
 {
-  VXL_DEPRECATED_MACRO("vgl_h_matrix_1d<T>::get(vnl_matrix<T>*) const");
+  //VXL_DEPRECATED_MACRO("vgl_h_matrix_1d<T>::get(vnl_matrix<T>*) const");
+  printf("vgl_h_matrix_1d<T>::get(vnl_matrix<T>*) const is deprecated.\n");
   *H = t12_matrix_.as_ref(); // size 2x2
 }
 
