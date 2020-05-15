@@ -16,10 +16,10 @@ add_executable( vpgl_algo_test_all
   test_optimize_camera.cxx
   test_fm_compute.cxx
   test_camera_compute.cxx
-  test_camera_convert.cxx
-  test_lens_warp_mapper.cxx
+  #test_camera_convert.cxx
+  #test_lens_warp_mapper.cxx
   test_backproject.cxx
-  test_ray.cxx
+  #test_ray.cxx
   test_ray_intersect.cxx
   test_ortho_procrustes.cxx
   test_rational_adjust_onept.cxx
@@ -31,7 +31,8 @@ add_executable( vpgl_algo_test_all
   test_bundle_adjust.cxx
   test_affine_rectification.cxx
 )
-target_link_libraries( vpgl_algo_test_all ${VXL_LIB_PREFIX}vpgl_algo ${VXL_LIB_PREFIX}vgl_algo ${VXL_LIB_PREFIX}vgl ${VXL_LIB_PREFIX}vnl_algo ${VXL_LIB_PREFIX}vnl ${VXL_LIB_PREFIX}vil ${VXL_LIB_PREFIX}vul ${VXL_LIB_PREFIX}testlib )
+#${VXL_LIB_PREFIX}vil ${VXL_LIB_PREFIX}vul 
+target_link_libraries( vpgl_algo_test_all ${VXL_LIB_PREFIX}vpgl_algo ${VXL_LIB_PREFIX}vgl_algo ${VXL_LIB_PREFIX}vgl ${VXL_LIB_PREFIX}vnl_algo ${VXL_LIB_PREFIX}vnl ${VXL_LIB_PREFIX}testlib )
 endif()
 
 if(GEOTIFF_VALID)
@@ -40,10 +41,10 @@ add_executable( vpgl_algo_test_all
   test_optimize_camera.cxx
   test_fm_compute.cxx
   test_camera_compute.cxx
-  test_camera_convert.cxx
-  test_lens_warp_mapper.cxx
+  #test_camera_convert.cxx
+  #test_lens_warp_mapper.cxx
   test_backproject.cxx
-  test_ray.cxx
+  #test_ray.cxx
   test_ray_intersect.cxx
   test_ortho_procrustes.cxx
   test_rational_adjust_onept.cxx
@@ -56,7 +57,8 @@ add_executable( vpgl_algo_test_all
   test_affine_rectification.cxx
   test_backproject_dem.cxx
 )
-target_link_libraries( vpgl_algo_test_all ${VXL_LIB_PREFIX}vpgl_algo ${VXL_LIB_PREFIX}vpgl_file_formats ${VXL_LIB_PREFIX}vgl_algo ${VXL_LIB_PREFIX}vgl ${VXL_LIB_PREFIX}vnl_algo ${VXL_LIB_PREFIX}vnl ${VXL_LIB_PREFIX}vil ${VXL_LIB_PREFIX}vul ${VXL_LIB_PREFIX}testlib )
+# ${VXL_LIB_PREFIX}vil ${VXL_LIB_PREFIX}vul ${VXL_LIB_PREFIX}vpgl_file_formats
+target_link_libraries( vpgl_algo_test_all ${VXL_LIB_PREFIX}vpgl_algo ${VXL_LIB_PREFIX}vgl_algo ${VXL_LIB_PREFIX}vgl ${VXL_LIB_PREFIX}vnl_algo ${VXL_LIB_PREFIX}vnl ${VXL_LIB_PREFIX}testlib )
 add_test( NAME vpgl_algo_test_backproject_dem COMMAND $<TARGET_FILE:vpgl_algo_test_all> test_backproject_dem )
 endif()
 

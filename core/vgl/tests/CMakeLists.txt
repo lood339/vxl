@@ -30,7 +30,7 @@ add_executable( vgl_test_all
   test_oriented_box_2d.cxx
   test_affine_coordinates.cxx
 )
-target_link_libraries( vgl_test_all ${VXL_LIB_PREFIX}vgl ${VXL_LIB_PREFIX}vpl ${VXL_LIB_PREFIX}testlib )
+target_link_libraries( vgl_test_all ${VXL_LIB_PREFIX}vgl ${VXL_LIB_PREFIX}testlib ) #${VXL_LIB_PREFIX}vpl 
 
 add_test( NAME vgl_test_cartesian COMMAND $<TARGET_FILE:vgl_test_all> test_cartesian )
 add_test( NAME vgl_test_distance COMMAND $<TARGET_FILE:vgl_test_all> test_distance )
@@ -53,8 +53,8 @@ add_test( NAME vgl_test_ray_3d COMMAND $<TARGET_FILE:vgl_test_all> test_ray_3d)
 add_test( NAME vgl_test_plane_3d COMMAND $<TARGET_FILE:vgl_test_all> test_plane_3d)
 add_test( NAME vgl_test_frustum_3d COMMAND $<TARGET_FILE:vgl_test_all> test_frustum_3d)
 add_test( NAME vgl_test_intersection COMMAND $<TARGET_FILE:vgl_test_all> test_intersection)
-add_test( NAME vgl_test_spline COMMAND $<TARGET_FILE:vgl_test_all> test_spline)
-add_test( NAME vgl_test_pointset COMMAND $<TARGET_FILE:vgl_test_all> test_pointset)
+#add_test( NAME vgl_test_spline COMMAND $<TARGET_FILE:vgl_test_all> test_spline)
+#add_test( NAME vgl_test_pointset COMMAND $<TARGET_FILE:vgl_test_all> test_pointset)
 add_test( NAME vgl_test_quadric COMMAND $<TARGET_FILE:vgl_test_all> test_quadric)
 add_test( NAME vgl_test_oriented_box_2d COMMAND $<TARGET_FILE:vgl_test_all> test_oriented_box_2d)
 add_test( NAME vgl_test_affine_coordinates COMMAND $<TARGET_FILE:vgl_test_all> test_affine_coordinates)

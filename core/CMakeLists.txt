@@ -135,7 +135,7 @@ else()
 endif ()
 
 # common test executable
-#add_subdirectory(testlib)
+add_subdirectory(testlib)
 
 # Tests that check and output the vxl configuration
 # NOTE: some external projects remove the tests directory (aka ITK)

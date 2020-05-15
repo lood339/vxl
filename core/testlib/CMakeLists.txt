@@ -33,7 +33,7 @@ set(testlib_sources
 vxl_add_library(LIBRARY_NAME ${VXL_LIB_PREFIX}testlib
   LIBRARY_SOURCES ${testlib_sources}
   HEADER_INSTALL_DIR core/testlib)
-target_link_libraries(${VXL_LIB_PREFIX}testlib ${VXL_LIB_PREFIX}vcl)
+target_link_libraries(${VXL_LIB_PREFIX}testlib) #${VXL_LIB_PREFIX}vcl
 
 if( BUILD_TESTING )
   add_subdirectory(tests)

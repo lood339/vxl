@@ -267,7 +267,7 @@ endif()
 vxl_add_library(LIBRARY_NAME ${VXL_LIB_PREFIX}vnl
   LIBRARY_SOURCES ${vnl_sources}
   HEADER_INSTALL_DIR vnl)
-target_link_libraries( ${VXL_LIB_PREFIX}vnl ${VXL_LIB_PREFIX}vcl )
+target_link_libraries( ${VXL_LIB_PREFIX}vnl ) #${VXL_LIB_PREFIX}vcl
 set(_curr_lib_name vnl)
 # If VXL_INSTALL_INCLUDE_DIR is the default value
 if("${VXL_INSTALL_INCLUDE_DIR}" STREQUAL "include/vxl")

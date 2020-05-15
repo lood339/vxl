@@ -12,7 +12,7 @@
 // The following should have been created automatically by the
 // configuration scripts from vcl_where_root_dir.h.in
 // We need to check for its existence and if it doesn't exist - do something else.
-#include <vcl_where_root_dir.h>
+//#include <vcl_where_root_dir.h>
 //: Return source root directory (ie the one just below vcl and vxl).
 std::string testlib_root_dir()
 {
@@ -28,7 +28,9 @@ std::string testlib_root_dir()
   if (ptr)
     return std::string(ptr);
 
-  return std::string(VCL_SOURCE_ROOT_DIR);
+  std::cerr<<"ERROR: testlib_root_dir() Unable to retrieve directory from\n";
+  return ("");
+  //return std::string(VCL_SOURCE_ROOT_DIR);
 
   //std::cerr<<"ERROR: testlib_root_dir() Unable to retrieve directory from\n"
   //      <<"$VCLSRC or $VXLSRC or $VXL_SRC.  Sorry.\n";

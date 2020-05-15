@@ -26,7 +26,7 @@ set_vxl_library_properties(
      USE_HIDDEN_VISIBILITY
 )
 
-target_link_libraries( ${VXL_LIB_PREFIX}vpl ${VXL_LIB_PREFIX}vcl )
+target_link_libraries( ${VXL_LIB_PREFIX}vpl) #${VXL_LIB_PREFIX}vcl
 if(NOT UNIX)
   target_link_libraries( ${VXL_LIB_PREFIX}vpl ws2_32 ${VXL_LIB_PREFIX}vcl )
 endif()

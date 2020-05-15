@@ -9,9 +9,9 @@ DECLARE( test_essential_matrix );
 DECLARE( test_calibration_matrix );
 DECLARE( test_poly_radial_distortion );
 DECLARE( test_rational_camera );
-DECLARE( test_local_rational_camera );
-DECLARE( test_generic_camera );
-DECLARE( test_lvcs );
+//DECLARE( test_local_rational_camera );
+//DECLARE( test_generic_camera );
+//DECLARE( test_lvcs );
 
 void register_tests()
 {
@@ -24,9 +24,9 @@ void register_tests()
   REGISTER( test_calibration_matrix );
   REGISTER( test_poly_radial_distortion );
   REGISTER( test_rational_camera );
-  REGISTER( test_local_rational_camera );
-  REGISTER( test_generic_camera );
-  REGISTER( test_lvcs );
+  //REGISTER( test_local_rational_camera );
+  //REGISTER( test_generic_camera );
+  //REGISTER( test_lvcs );
 }
 
 DEFINE_MAIN;
