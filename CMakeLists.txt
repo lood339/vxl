@@ -229,27 +229,6 @@ include_directories(${VCL_INCLUDE_DIRS} ${VXLCORE_INCLUDE_DIRS})
 # Do platform-specific configuration.
 include(${CMAKE_CURRENT_LIST_DIR}/config/cmake/config/VXLIntrospectionConfig.cmake)
 
-#-------------------------------------------------------------------
-# This block should come after VXLIntrospectionConfig.cmake has been executed.
-if(VCL_HAS_LFS OR WIN32)
-  option( VXL_USE_LFS "Should VXL use Large File Support?" NO)
-  mark_as_advanced( VXL_USE_LFS )
-endif()
-
-if(VXL_USE_LFS)
-  if(WIN32)
-    # TODO: MS Version Support
-    #  message( SEND_ERROR "Sorry - Large File Support is not quite working on Win32 yet. Turning VXL_USE_LFS off")
-    #  set(VXL_USE_LFS "NO" CACHE BOOL "Should VXL use Large File Support?" FORCE)
-  else()
-    if(VCL_HAS_LFS)
-      add_definitions( -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE)
-    else()
-      message( SEND_ERROR "This platform does not have Large File Support - turning VXL_USE_LFS off")
-      set(VXL_USE_LFS "NO" CACHE BOOL "Should VXL use Large File Support?" FORCE)
-    endif()
-  endif()
-endif()
 
 #-------------------------------------------------------------------
 #-- BUILD SELECTION OPTIONS
@@ -269,19 +248,14 @@ mark_as_advanced(VXL_BUILD_EXAMPLES)
 option( VXL_BUILD_NONDEPRECATED_ONLY "Build only nondeprecated libraries (Experimental)" ON )
 mark_as_advanced(VXL_BUILD_NONDEPRECATED_ONLY)
 
-CMAKE_DEPENDENT_OPTION(VXL_BUILD_CORE_PROBABILITY "Build VXL's probability libraries (Experimental)" OFF
-                       "VXL_BUILD_CORE_NUMERICS;NOT VXL_BUILD_CORE_NUMERICS_ONLY" OFF)
+#CMAKE_DEPENDENT_OPTION(VXL_BUILD_CORE_PROBABILITY "Build VXL's probability libraries (Experimental)" OFF
+#                       "VXL_BUILD_CORE_NUMERICS;NOT VXL_BUILD_CORE_NUMERICS_ONLY" OFF)
 
 # Build the core vxl + support libraries
 # add_subdirectory(vcl)
 add_subdirectory(v3p)
 add_subdirectory(core)
 
-# Optionally build the contributed libraries
-if( EXISTS ${CMAKE_CURRENT_LIST_DIR}/contrib/CMakeLists.txt )
-  CMAKE_DEPENDENT_OPTION(VXL_BUILD_CONTRIB "Build the contributed libraries?" OFF "VXL_BUILD_CORE_GEOMETRY;VXL_BUILD_CORE_NUMERICS;VXL_BUILD_CORE_UTILITIES;VXL_BUILD_CORE_SERIALISATION;VXL_BUILD_CORE_IMAGING;NOT VXL_BUILD_CORE_NUMERICS_ONLY" OFF)
-  add_subdirectory(contrib)
-endif()
 
 # Generate Project files dependacy generation for now for downstream packages
 
