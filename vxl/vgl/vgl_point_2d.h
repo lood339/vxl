@@ -267,4 +267,6 @@ double cross_ratio(vgl_point_2d<T>const& p1, vgl_point_2d<T>const& p2,
 }
 
 
+using vgl_point_2d_d = vgl_point_2d<double>;
+
 #endif // vgl_point_2d_h
