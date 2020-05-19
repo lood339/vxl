@@ -17,7 +17,7 @@
 #ifdef _MSC_VER
 #  include <vcl_msvc_warnings.h>
 #endif
-#include <vgl/vgl_point_3d.h> // data member of this class
+#include "vgl_point_3d.h" // data member of this class
 
 //: Represents a 3D line segment using two points.
 template <class Type>
@@ -76,12 +76,11 @@ class vgl_line_segment_3d
 //: Write to stream
 // \relatesalso vgl_line_segment_3d
 template <class Type>
-std::ostream&  operator<<(std::ostream& s, const vgl_line_segment_3d<Type>& p);
+std::ostream&  operator<<(std::ostream& s, const vgl_line_segment_3d<Type>& p)
+{
+  return s << "<vgl_line_segment_3d " << p.point1() << " to " << p.point2() << " >";
+}
 
-//: Read from stream
-// \relatesalso vgl_line_segment_3d
-template <class Type>
-std::istream&  operator>>(std::istream& is,  vgl_line_segment_3d<Type>& p);
-#define VGL_LINE_SEGMENT_3D_INSTANTIATE(T) extern "please include vgl/vgl_line_segment_3d.hxx first"
+
 
 #endif // vgl_line_segment_3d_h_
